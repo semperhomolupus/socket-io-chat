@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <style>
+    .message-text {
+        display: inline-block;
+        vertical-align: top;
+        width: 100px;
+    }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+        <div class="container">
+                <span class="navbar-brand">Socket.io - пример чата</span>
+        </div>
+    </nav>
+
+    <main class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <h4>Сообщение</h4>
+                        <form action="">
+                            <input class="form-control mt-3 mb-3" type="text" placeholder='Введите ваше имя' name="name" required>
+                            <select class="form-control mt-3 mb-3" name="color">
+                                <option class="text-success" value="success">Зеленый</option>
+                                <option class="text-info" value="info">Голубой</option>
+                                <option class="text-secondary" value="secondary">Серый</option>
+                            </select>
+                            <textarea class="form-control mt-3 mb-3" placeholder="Введите сообщение" name="message" id="" rows="8" required></textarea>
+                            <button type="submit" class="btn btn-success">ОТПРАВИТЬ</button>
+                        </form>
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <h4>Чат</h4>
+                        <ul class="list-group list-group-flush mt-3" id="messages">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+</html>
