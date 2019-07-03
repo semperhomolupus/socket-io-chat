@@ -5,14 +5,16 @@ const socket = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-server.listen(3000);
+
+const port = process.env.PORT || 3000;
+server.listen(port);
 const io = socket.listen(server);
 
 console.log('socket')
 app.use(express.static(__dirname + '/'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + './index.html')
     console.log('started') 
 })
 
