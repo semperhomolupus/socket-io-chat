@@ -12,7 +12,7 @@ $(function() {
     let socket;
 
     if (userID) {
-        socket = io.connect('http://localhost:3000?userID=' + userID);
+        socket = io.connect(window.location.origin + '?userID=' + userID);
         userName = window.localStorage.getItem('chat-user-name');
         userSurname = window.localStorage.getItem('chat-user-surname');
 
